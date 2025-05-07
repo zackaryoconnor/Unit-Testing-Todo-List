@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { React, useState } from 'react'
+import { render, screen } from '@testing-library/react'
+import App from './App'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+
+test('Renders the todo app header', () => {
+  const app = render(<App />)
+  const heading = app.getByRole('heading')
+  expect(heading).toHaveTextContent('Todo App')
+})
